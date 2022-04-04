@@ -1,0 +1,13 @@
+{
+  "appId": "com.rickandmorty.app",
+  "appName": "rickandmorty",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

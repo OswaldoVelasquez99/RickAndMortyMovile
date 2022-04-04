@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="locations"></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{location.name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> {{location.type}} </ion-card-subtitle>
+      <ion-card-title>{{location.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p><b>Dimension: </b> {{location.dimension}} </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let character of location.residents" (click)="goCharacter(character.id)">
+    <img [src]="character.image" width="100px">
+    <ion-card-content>
+      <h1> {{  character.name }} </h1>
+      <h2> {{ character.species }} </h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

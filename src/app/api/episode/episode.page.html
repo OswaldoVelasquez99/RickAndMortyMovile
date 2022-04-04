@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="episodes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{episode.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{episode.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p><b>Date: </b> {{episode.air_date}} </p>
+      <p><b>Episode: </b> {{episode.episode}} </p>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let character of episode.characters" (click)="goCharacter(character.id)">
+    <img [src]="character.image" width="100px">
+    <ion-card-content>
+      <p> {{ character.name }} </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
